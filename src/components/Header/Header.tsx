@@ -1,12 +1,20 @@
 import { Box, Divider, Stack, Typography } from '@mui/material';
+import { v4 } from 'uuid';
+import { useAppSelector } from 'store/hooks';
 
 function Header() {
+  const { headerInfo } = useAppSelector((state) => state.converter);
+
   return (
     <Box>
       <Stack direction="row" justifyContent="center" spacing={2} py={2}>
-        <Typography>36.77 UAH / USD</Typography>
-        <Divider orientation="vertical" flexItem />
-        <Typography>37.02 UAH / EUR</Typography>
+        {headerInfo.length
+          ? headerInfo.map(({ base, rates }) => (
+              <Typography key={v4()}>
+                {rates['UAH'].toFixed(2)} UAH / {base}
+              </Typography>
+            ))
+          : null}
       </Stack>
       <Divider />
     </Box>
