@@ -11,7 +11,6 @@ const initialState: IConverterState = {
   rates: {},
   summaryAmountFrom: 0,
   summaryAmountTo: 0,
-  date: '',
   headerInfo: []
 };
 
@@ -29,14 +28,6 @@ const converterSlice = createSlice({
 
     setRates(state, action: PayloadAction<{ [currency: string]: number }>) {
       state.rates = action.payload;
-    },
-
-    setDate(state, action: PayloadAction<string>) {
-      const date = new Date(action.payload);
-
-      state.date = new Intl.DateTimeFormat('en-GB', {
-        dateStyle: 'full'
-      }).format(date);
     },
 
     setHeaderInfo(state, action: PayloadAction<IExchangeData[]>) {
@@ -98,7 +89,6 @@ export const {
   setErrorMessage,
   setCurrencyList,
   setRates,
-  setDate,
   setHeaderInfo,
   updateSummary,
   handleUpdateAmountFrom,

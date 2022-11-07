@@ -18,8 +18,7 @@ function Converter() {
     amountTo,
     amountFrom,
     summaryAmountFrom,
-    summaryAmountTo,
-    date
+    summaryAmountTo
   } = useAppSelector((state) => state.converter);
   const dispatch = useAppDispatch();
 
@@ -39,6 +38,11 @@ function Converter() {
   const onCurrencyChangeTo = (currency: string) => {
     dispatch(handleUpdateCurrencyTo(currency));
   };
+
+  const date = new Intl.DateTimeFormat('en-GB', {
+    dateStyle: 'medium',
+    timeStyle: 'short'
+  }).format(new Date());
 
   return errorMessage ? (
     <Typography p={2}>{errorMessage}</Typography>

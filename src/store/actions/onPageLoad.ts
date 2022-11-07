@@ -2,7 +2,6 @@ import { AppDispatch } from 'store/store';
 import {
   handleUpdateAmountFrom,
   setCurrencyList,
-  setDate,
   setErrorMessage,
   setHeaderInfo,
   setRates,
@@ -20,7 +19,6 @@ export const onPageLoad = () => async (dispatch: AppDispatch) => {
     dispatch(setRates(res.rates));
     dispatch(handleUpdateAmountFrom(1));
     dispatch(updateSummary());
-    dispatch(setDate(res.date));
 
     const resUSD = await getExchangeRate('USD', `UAH`);
     const resEUR = await getExchangeRate('EUR', `UAH`);

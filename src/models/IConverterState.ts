@@ -10,6 +10,5 @@ export interface IConverterState {
   rates: { [currency: string]: number };
   summaryAmountFrom: number;
   summaryAmountTo: number;
-  date: string;
   headerInfo: IExchangeData[];
 }
