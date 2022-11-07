@@ -4,12 +4,17 @@ export const appTheme = createTheme({
   palette: {
     background: {
       default: '#ddd'
-    },
-    divider: '#bbb'
+    }
   },
   typography: {
-    h1: {
-      fontSize: '4rem'
+    h6: {
+      fontSize: '1.1rem'
+    },
+    subtitle1: {
+      color: '#70757a'
+    },
+    subtitle2: {
+      color: '#70757a'
     }
   },
   components: {

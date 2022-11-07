@@ -1,4 +1,4 @@
-import { Stack, Typography } from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
 import { InputGroup } from 'components';
 import { useAppDispatch, useAppSelector } from 'store/hooks';
 import {
@@ -41,17 +41,17 @@ function Converter() {
   };
 
   return errorMessage ? (
-    <Typography>{errorMessage}</Typography>
+    <Typography p={2}>{errorMessage}</Typography>
   ) : (
-    <>
-      <Stack spacing={2}>
-        <Typography>
+    <Box p={3}>
+      <Stack spacing={1} pt={2}>
+        <Typography variant="subtitle1">
           {summaryAmountFrom} {currencyFrom} equals
         </Typography>
         <Typography variant="h4">
           {summaryAmountTo} {currencyTo}
         </Typography>
-        <Typography>{date}</Typography>
+        <Typography variant="subtitle2">{date}</Typography>
       </Stack>
       <Stack spacing={2} py={4}>
         <InputGroup
@@ -69,7 +69,7 @@ function Converter() {
           onCurrencyChange={onCurrencyChangeTo}
         />
       </Stack>
-    </>
+    </Box>
   );
 }
 

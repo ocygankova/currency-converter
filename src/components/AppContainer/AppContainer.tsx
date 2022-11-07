@@ -12,7 +12,7 @@ function AppContainer({ children }: Props) {
 
   return (
     <Container maxWidth="xs" disableGutters={isWidthXs}>
-      <Paper elevation={0} square={isWidthXs} sx={{ p: 2, mt: 10, maxWidth: 'xs' }}>
+      <Paper elevation={0} square={isWidthXs} sx={{ mt: 10, minHeight: '440px' }}>
         {children}
       </Paper>
     </Container>

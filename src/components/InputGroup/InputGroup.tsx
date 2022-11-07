@@ -25,13 +25,13 @@ function InputGroup({ currencyList, currency, amount, onAmountChange, onCurrency
         value={amount}
         type="number"
         autoComplete="off"
-        sx={{ mr: 1 }}
+        sx={{ mr: 1, flex: 1 }}
         onChange={handleAmountChange}
       />
 
       {currencyList.length && (
         <FormControl>
-          <Select value={currency} onChange={handleCurrencyChange}>
+          <Select value={currency} onChange={handleCurrencyChange} sx={{ minWidth: '90px' }}>
             {currencyList.map((item) => (
               <MenuItem key={v4()} value={item}>
                 {item}

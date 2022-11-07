@@ -8,8 +8,8 @@ const request = axios.create({
 export const getExchangeRate = async (base: string, symbols: string) => {
   const { data } = await request.get(`/latest`, {
     params: {
-      symbols: symbols,
-      base: base
+      symbols,
+      base
     }
   });
 
