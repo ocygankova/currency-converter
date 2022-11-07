@@ -40,7 +40,7 @@ function Converter() {
   };
 
   const date = new Intl.DateTimeFormat('en-GB', {
-    dateStyle: 'medium',
+    dateStyle: 'long',
     timeStyle: 'short'
   }).format(new Date());
 
