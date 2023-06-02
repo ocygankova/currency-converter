@@ -1,4 +1,4 @@
- Converter app based on Google Currency Converter. 
+ Converter app based on Google Currency Converter functionality.
 
 ![converter](https://i.ibb.co/dKQj44Q/converter.jpg)
 
